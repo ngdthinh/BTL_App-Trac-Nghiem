@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             Cursor cursor = db.rawQuery("SELECT IDCauHoi,CauHoi,DapAnA,DapAnB,DapAnC,DapAnD " +
                     "FROM CauHoi WHERE IDMonThi=? AND IDLop =? " +
                     "ORDER BY random() LIMIT ?",
-                    new String[]{Common.IDMONTHI+"",Common.LOP+"",Common.SoLUONGCAUHOI+""});
+                    new String[]{Common.IDMONTHI+"",Common.LOP+"",Common.SOLUONGCAUHOI+""});
 
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {

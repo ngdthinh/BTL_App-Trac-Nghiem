@@ -1,18 +1,19 @@
 package com.example.appthitracnghiem.Model;
 
 public class DeThi {
-    private int IDDeThi,ThoiGianThi,IDMonThi,IDLop;
+    private int IDDeThi,ThoiGianThi,IDMonThi,IDLop,SoLuongCauHoi;
     private String TenDeThi;
 
-    public DeThi(int IDDeThi, int thoiGianThi, int IDMonThi, int IDLop, String tenDeThi) {
+    public DeThi() {
+    }
+
+    public DeThi(int IDDeThi, int thoiGianThi, int IDMonThi, int IDLop, int soLuongCauHoi, String tenDeThi) {
         this.IDDeThi = IDDeThi;
         ThoiGianThi = thoiGianThi;
         this.IDMonThi = IDMonThi;
         this.IDLop = IDLop;
+        SoLuongCauHoi = soLuongCauHoi;
         TenDeThi = tenDeThi;
-    }
-
-    public DeThi() {
     }
 
     public int getIDDeThi() {
@@ -45,6 +46,14 @@ public class DeThi {
 
     public void setIDLop(int IDLop) {
         this.IDLop = IDLop;
+    }
+
+    public int getSoLuongCauHoi() {
+        return SoLuongCauHoi;
+    }
+
+    public void setSoLuongCauHoi(int soLuongCauHoi) {
+        SoLuongCauHoi = soLuongCauHoi;
     }
 
     public String getTenDeThi() {

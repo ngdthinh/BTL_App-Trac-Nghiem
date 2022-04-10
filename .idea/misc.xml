@@ -5,13 +5,20 @@
       <map>
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable-anydpi/ic_action_list.xml" value="0.236" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable-mdpi/bacground_gradient.xml" value="0.236" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable-mdpi/custom_bottom_question.xml" value="0.1835" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.236" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable/custom_bottom_question_active.xml" value="0.236" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable/custom_monthi.xml" value="0.1835" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable/ic_launcher_background.xml" value="0.236" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/activity_de_thi.xml" value="0.25181159420289856" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/activity_ket_qua.xml" value="0.22282608695652173" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/activity_mon_thi.xml" value="0.22282608695652173" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/fragment_question.xml" value="0.22282608695652173" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/item_dethi.xml" value="0.264" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/item_monthi.xml" value="0.25181159420289856" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/layout_bottom_question.xml" value="0.25181159420289856" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.25181159420289856" />
       </map>
     </option>
   </component>

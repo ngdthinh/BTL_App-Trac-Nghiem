@@ -13,7 +13,6 @@ import android.widget.Toast;
 import com.example.appthitracnghiem.Adapters.MonThiAdapter;
 import com.example.appthitracnghiem.Commons.Common;
 import com.example.appthitracnghiem.ConfigDB.Database;
-import com.example.appthitracnghiem.Model.CauHoi;
 import com.example.appthitracnghiem.Model.MonThi;
 import com.example.appthitracnghiem.R;
 
@@ -29,12 +28,12 @@ public class MonThiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mon_thi);
 
-
         initView();
     }
     private void initView() {
         rcvMonThi = findViewById(R.id.rcvMonThi);
-        monThiAdapter= new MonThiAdapter(getListMonThi());
+        monThiAdapter= new MonThiAdapter(this,getListMonThi());
+
         GridLayoutManager gridLayoutManager =new GridLayoutManager(this,2);
         rcvMonThi.setLayoutManager(gridLayoutManager);
         rcvMonThi.setAdapter(monThiAdapter);

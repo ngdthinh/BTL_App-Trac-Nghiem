@@ -10,16 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppThiTracNghiem">
         <activity
-            android:name=".Activitys.MonThiActivity"
+            android:name=".Activitys.DeThiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitys.MainActivity"
             android:exported="false" />
         <activity
             android:name=".Activitys.KetQuaActivity"
             android:exported="false" />
         <activity
-            android:name=".Activitys.MainActivity"
+            android:name=".Activitys.MonThiActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
