@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -22,6 +23,7 @@ import com.example.appthitracnghiem.Fragments.QuestionBottomSheetFragment;
 import com.example.appthitracnghiem.Interfaces.IClickListenerQuestionBottom;
 import com.example.appthitracnghiem.Model.CauHoi;
 import com.example.appthitracnghiem.Model.ChiTietDeThi;
+import com.example.appthitracnghiem.Model.DeThi;
 import com.example.appthitracnghiem.R;
 
 import java.util.ArrayList;
@@ -29,11 +31,11 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager2 view_pager;
-    private TextView tv_nopbai,tv_info;
+    private TextView tv_nopbai, tv_info;
     private TextView tv_iconlist;
 
     private TextView tv_timer;
-    private Boolean isTimerRunning=false;
+    private Boolean isTimerRunning = false;
     private CountDownTimer countDownTimer;
 
     @Override
@@ -41,12 +43,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        System.out.println(Common.SOLUONGCAUHOI);
         addControls();
         addEventControls();
         getData(); //Lấy danh sách câu hỏi.
         initListChiTietDeThi();
 
-        QuestionFragmentAdapter questionFragmentAdapter = new QuestionFragmentAdapter(this,Common.cauHoiList);
+        QuestionFragmentAdapter questionFragmentAdapter = new QuestionFragmentAdapter(this, Common.cauHoiList);
         view_pager.setAdapter(questionFragmentAdapter);
     }
 
@@ -93,18 +96,18 @@ public class MainActivity extends AppCompatActivity {
                         view_pager.setCurrentItem(index);
                     }
                 });
-                questionBottomSheetFragment.show(getSupportFragmentManager(),questionBottomSheetFragment.getTag());
+                questionBottomSheetFragment.show(getSupportFragmentManager(), questionBottomSheetFragment.getTag());
             }
         });
     }
 
     private void getData() {
         try {
-            SQLiteDatabase db= Database.initDatabase(MainActivity.this, Common.DATABASE_NAME);
-            Cursor cursor = db.rawQuery("SELECT IDCauHoi,CauHoi,DapAnA,DapAnB,DapAnC,DapAnD " +
-                    "FROM CauHoi WHERE IDMonThi=? AND IDLop =? " +
-                    "ORDER BY random() LIMIT ?",
-                    new String[]{Common.IDMONTHI+"",Common.LOP+"",Common.SOLUONGCAUHOI+""});
+            SQLiteDatabase db = Database.initDatabase(MainActivity.this, Common.DATABASE_NAME);
+            Cursor cursor = db.rawQuery("SELECT IDCauHoi,CauHoi,DapAnA,DapAnB,DapAnC,DapAnD,DapAn " +
+                            "FROM CauHoi WHERE IDMonThi=? AND IDLop =? " +
+                            "ORDER BY random() LIMIT ?",
+                    new String[]{Common.IDMONTHI + "", Common.LOP + "", Common.SOLUONGCAUHOI + ""});
 
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
@@ -115,29 +118,30 @@ public class MainActivity extends AppCompatActivity {
                 cauHoi.setDapAnB(cursor.getString(3));
                 cauHoi.setDapAnC(cursor.getString(4));
                 cauHoi.setDapAnD(cursor.getString(5));
+                //bổ sung thêm chỗ này
+                cauHoi.setDapAn(cursor.getString(6));
                 Common.cauHoiList.add(cauHoi);
                 cursor.moveToNext();
             }
-        }
-        catch(SQLException e) {
-            Toast.makeText(MainActivity.this,"Lỗi kết nối tới CSDL",Toast.LENGTH_SHORT).show();
+        } catch (SQLException e) {
+            Toast.makeText(MainActivity.this, "Lỗi kết nối tới CSDL", Toast.LENGTH_SHORT).show();
         }
 
     }
 
     private void initListChiTietDeThi() {
-        for (int i = 0; i< Common.cauHoiList.size(); i++){
-            ChiTietDeThi chiTietDeThi = new ChiTietDeThi(Common.IDDETHI,Common.cauHoiList.get(i).getIDCauHoi(),null);
+        for (int i = 0; i < Common.cauHoiList.size(); i++) {
+            ChiTietDeThi chiTietDeThi = new ChiTietDeThi(Common.IDDETHI, Common.cauHoiList.get(i).getIDCauHoi(), null);
             Common.chiTietDeThiList.add(chiTietDeThi);
         }
     }
 
     private void activeTimer() {
-        isTimerRunning=true;
-        countDownTimer=new CountDownTimer(Common.THOI_GIAN_THI*1000+100,1000) {
+        isTimerRunning = true;
+        countDownTimer = new CountDownTimer(Common.THOI_GIAN_THI * 1000 + 100, 1000) {
             @Override
             public void onTick(long l) {
-                updateTimmer( (int) l/1000);
+                updateTimmer((int) l / 1000);
             }
 
             @Override
@@ -147,16 +151,17 @@ public class MainActivity extends AppCompatActivity {
         }.start();
     }
 
-    int secondLeft=0;
+    int secondLeft = 0;
+
     private void updateTimmer(int thoigianconlai) {
-        secondLeft=thoigianconlai;
-        int minutes = thoigianconlai/60;
-        int seconds = thoigianconlai-(minutes*60);
+        secondLeft = thoigianconlai;
+        int minutes = thoigianconlai / 60;
+        int seconds = thoigianconlai - (minutes * 60);
         String secondsString = Integer.toString(seconds);
-        if(seconds<=9){
-            secondsString ="0"+secondsString;
+        if (seconds <= 9) {
+            secondsString = "0" + secondsString;
         }
-        tv_timer.setText(Integer.toString(minutes)+":"+secondsString);
+        tv_timer.setText( Integer.toString(minutes) + ":" + secondsString);
     }
 
     private void callKetQuaThiActivity() {
@@ -165,14 +170,35 @@ public class MainActivity extends AppCompatActivity {
 
         //Tính thời gian làm bài
         getCountTime();
+        //Cập nhật chi tiết đề thi vào CSDL
+        insertChiTietDeThi();
         //Chuyển hướng Activity KetQuaThi
-        Intent i = new Intent(MainActivity.this,KetQuaActivity.class);
+        Intent i = new Intent(MainActivity.this, KetQuaActivity.class);
         startActivity(i);
 
         tv_info.setVisibility(View.VISIBLE);
     }
 
+    private void insertChiTietDeThi() {
+        for (int i=0;i<Common.chiTietDeThiList.size();i++){
+            ChiTietDeThi chiTietDeThi = Common.chiTietDeThiList.get(i);
+
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("IDDeThi",chiTietDeThi.getIDDeThi());
+            contentValues.put("IDCauHoi",chiTietDeThi.getIDCauHoi());
+            contentValues.put("DapAnLuaChon",chiTietDeThi.getDapAnLuaChon());
+
+            try {
+                SQLiteDatabase db= Database.initDatabase(MainActivity.this, Common.DATABASE_NAME);
+                db.insert("ChiTietDeThi",null,contentValues);
+            }
+            catch(SQLException e) {
+                Toast.makeText(MainActivity.this,"Lỗi kết nối tới CSDL",Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
     private void getCountTime() {
-        Common.THOI_GIAN_LAM_BAI=Common.THOI_GIAN_THI-secondLeft;
+        Common.THOI_GIAN_LAM_BAI = Common.THOI_GIAN_THI - secondLeft;
     }
 }

@@ -13,10 +13,14 @@ public class Common {
 
     public static  int IDDETHI;
     public static String  TEN_DE_THI;
+    public static  int ID_HOCSINH=1;
+
     public static  int IDMONTHI;
     public static  int SOLUONGCAUHOI;
     public static  int THOI_GIAN_THI; //giây
     public static  int THOI_GIAN_LAM_BAI;
+    public static int SO_CAU_DUNG = 0;
+    public static int DIEM = 0;
 
 
     public static List<ChiTietDeThi> chiTietDeThiList=new ArrayList<>();

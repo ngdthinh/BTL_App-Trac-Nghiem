@@ -59,6 +59,8 @@ public class QuestionFragment extends Fragment {
             public void onClick(View view) {
                 addQuestionAnswer("A");
                 resetBackground();
+                addDetailQuestionAnswer(tv_AnswerA.getText().toString());
+                addDetailQuestion(tv_Question.getText().toString());
                 tv_AnswerA.setBackgroundResource(R.color.purple_200);
             }
         });
@@ -67,6 +69,8 @@ public class QuestionFragment extends Fragment {
             public void onClick(View view) {
                 addQuestionAnswer("B");
                 resetBackground();
+                addDetailQuestionAnswer(tv_AnswerB.getText().toString());
+                addDetailQuestion(tv_Question.getText().toString());
                 tv_AnswerB.setBackgroundResource(R.color.purple_200);
             }
         });
@@ -75,6 +79,8 @@ public class QuestionFragment extends Fragment {
             public void onClick(View view) {
                 addQuestionAnswer("C");
                 resetBackground();
+                addDetailQuestionAnswer(tv_AnswerC.getText().toString());
+                addDetailQuestion(tv_Question.getText().toString());
                 tv_AnswerC.setBackgroundResource(R.color.purple_200);
             }
         });
@@ -83,6 +89,8 @@ public class QuestionFragment extends Fragment {
             public void onClick(View view) {
                 addQuestionAnswer("D");
                 resetBackground();
+                addDetailQuestionAnswer(tv_AnswerD.getText().toString());
+                addDetailQuestion(tv_Question.getText().toString());
                 tv_AnswerD.setBackgroundResource(R.color.purple_200);
             }
         });
@@ -115,5 +123,11 @@ public class QuestionFragment extends Fragment {
     private void addQuestionAnswer(String answer) {
         Common.chiTietDeThiList.get(index).setDapAnLuaChon(answer);
     }
+    private void addDetailQuestion(String strCauHoi) {
+        Common.chiTietDeThiList.get(index).setChiTietCauHoi(strCauHoi);
+    }
 
+    private void addDetailQuestionAnswer(String strCauTraLoi) {
+        Common.chiTietDeThiList.get(index).setChiTietDapAn(strCauTraLoi);
+    }
 }

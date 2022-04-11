@@ -4,6 +4,9 @@ public class ChiTietDeThi {
     private int IDDeThi,IDCauHoi;
     private String DapAnLuaChon;
 
+    private String chiTietDapAn;
+    private String chiTietCauHoi;
+
     public ChiTietDeThi(int IDDeThi, int IDCauHoi, String dapAnLuaChon) {
         this.IDDeThi = IDDeThi;
         this.IDCauHoi = IDCauHoi;
@@ -35,5 +38,21 @@ public class ChiTietDeThi {
 
     public void setDapAnLuaChon(String dapAnLuaChon) {
         DapAnLuaChon = dapAnLuaChon;
+    }
+
+    public String getChiTietDapAn() {
+        return chiTietDapAn;
+    }
+
+    public void setChiTietDapAn(String chiTietDapAn) {
+        this.chiTietDapAn = chiTietDapAn;
+    }
+
+    public String getChiTietCauHoi() {
+        return chiTietCauHoi;
+    }
+
+    public void setChiTietCauHoi(String chiTietCauHoi) {
+        this.chiTietCauHoi = chiTietCauHoi;
     }
 }

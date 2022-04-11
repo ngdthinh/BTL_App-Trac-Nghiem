@@ -41,7 +41,7 @@ public class DeThiAdapter extends RecyclerView.Adapter<DeThiAdapter.DeThiHolder>
         if(deThi==null)
             return;
         holder.tv_tendethi.setText(deThi.getTenDeThi());
-        holder.tv_thoigianthi.setText(deThi.getThoiGianThi()+"");
+        holder.tv_thoigianthi.setText(deThi.getThoiGianThi()+"'");
         holder.cv_dethi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
