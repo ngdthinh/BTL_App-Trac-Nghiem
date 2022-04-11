@@ -72,7 +72,7 @@ public class KetQuaActivity extends AppCompatActivity {
         TextView txtThoiGianLamBai = findViewById(R.id.txtThoiGianLam);
         TextView txtSoCauDung = findViewById(R.id.txtSoCauDung);
         TextView txtDiem = findViewById(R.id.txtDiem);
-
+        TextView txtTenHS=findViewById(R.id.tv_TenHocSinh);
 
         int minutes = Common.THOI_GIAN_LAM_BAI / 60;
         int seconds = Common.THOI_GIAN_LAM_BAI - (minutes * 60);
@@ -84,7 +84,7 @@ public class KetQuaActivity extends AppCompatActivity {
         txtDeThi.setText("Đề thi: "+Common.TEN_DE_THI);
         txtThoiGianLamBai.setText("Thời gian làm bài: "+Integer.toString(minutes) + ":" + secondsString);
         txtSoCauDung.setText("Số câu đúng: " + Common.SO_CAU_DUNG + "/" + chiTietBaiLam.size());
-
+        txtTenHS.setText("Tên học sinh: "+Common.TEN_HOC_SINH);
         DiemBaiThi=Common.SO_CAU_DUNG * 1.0 / chiTietBaiLam.size() * 10;
         txtDiem.setText("Điểm: " + String.valueOf(DiemBaiThi));
 

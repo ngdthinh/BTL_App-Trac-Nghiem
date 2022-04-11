@@ -11,7 +11,7 @@ public class Common {
 
     public static  int ID_HOCSINH;
     public static  String TEN_HOC_SINH;
-    public static  int LOP;
+    public static  int LOP=12;
 
     public static  int IDDETHI;
     public static String  TEN_DE_THI;

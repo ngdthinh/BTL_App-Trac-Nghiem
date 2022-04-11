@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (passDB.equals(password)) {
                             Common.ID_HOCSINH=cursor.getInt(0);
                             Common.TEN_HOC_SINH=cursor.getString(1);
+                            Common.LOP=cursor.getInt(3);
                             Intent i = new Intent(LoginActivity.this, MonThiActivity.class);
                             startActivity(i);
                         } else {
