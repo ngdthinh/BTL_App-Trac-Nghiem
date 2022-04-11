@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initListChiTietDeThi() {
         for (int i = 0; i < Common.cauHoiList.size(); i++) {
-            ChiTietDeThi chiTietDeThi = new ChiTietDeThi(Common.IDDETHI, Common.cauHoiList.get(i).getIDCauHoi(), null);
+            ChiTietDeThi chiTietDeThi = new ChiTietDeThi(Common.IDDETHI, Common.cauHoiList.get(i).getIDCauHoi(),Common.ID_HOCSINH, null);
             Common.chiTietDeThiList.add(chiTietDeThi);
         }
     }
@@ -182,10 +182,10 @@ public class MainActivity extends AppCompatActivity {
     private void insertChiTietDeThi() {
         for (int i=0;i<Common.chiTietDeThiList.size();i++){
             ChiTietDeThi chiTietDeThi = Common.chiTietDeThiList.get(i);
-
             ContentValues contentValues = new ContentValues();
             contentValues.put("IDDeThi",chiTietDeThi.getIDDeThi());
             contentValues.put("IDCauHoi",chiTietDeThi.getIDCauHoi());
+            contentValues.put("IDHocSinh",chiTietDeThi.getIDHocSinh());
             contentValues.put("DapAnLuaChon",chiTietDeThi.getDapAnLuaChon());
 
             try {

@@ -1,15 +1,16 @@
 package com.example.appthitracnghiem.Model;
 
 public class ChiTietDeThi {
-    private int IDDeThi,IDCauHoi;
+    private int IDDeThi,IDCauHoi,IDHocSinh;
     private String DapAnLuaChon;
 
     private String chiTietDapAn;
     private String chiTietCauHoi;
 
-    public ChiTietDeThi(int IDDeThi, int IDCauHoi, String dapAnLuaChon) {
+    public ChiTietDeThi(int IDDeThi, int IDCauHoi,int IDHocSinh, String dapAnLuaChon) {
         this.IDDeThi = IDDeThi;
         this.IDCauHoi = IDCauHoi;
+        this.IDHocSinh=IDHocSinh;
         DapAnLuaChon = dapAnLuaChon;
     }
 
@@ -30,6 +31,14 @@ public class ChiTietDeThi {
 
     public void setIDCauHoi(int IDCauHoi) {
         this.IDCauHoi = IDCauHoi;
+    }
+
+    public int getIDHocSinh() {
+        return IDHocSinh;
+    }
+
+    public void setIDHocSinh(int IDHocSinh) {
+        this.IDHocSinh = IDHocSinh;
     }
 
     public String getDapAnLuaChon() {

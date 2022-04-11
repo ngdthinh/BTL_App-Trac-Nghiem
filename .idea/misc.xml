@@ -27,6 +27,14 @@
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/layout_bottom_question.xml" value="0.25181159420289856" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.25181159420289856" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/list_ketquathi_t.xml" value="0.2572463768115942" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable-mdpi/custom_bottom_question.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable-xhdpi/bacground_gradient.xml" value="0.1315" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable-xhdpi/custom_bottom_question.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable-xhdpi/custom_bottom_question_active.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable/bacground_gradient.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable/custom_bottom_question_active.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable/custom_monthi.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/activity_login.xml" value="0.264" />
       </map>
     </option>
   </component>

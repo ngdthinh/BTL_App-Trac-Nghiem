@@ -80,6 +80,7 @@ public class KetQuaActivity extends AppCompatActivity {
         if (seconds <= 9) {
             secondsString = "0" + secondsString;
         }
+
         txtDeThi.setText("Đề thi: "+Common.TEN_DE_THI);
         txtThoiGianLamBai.setText("Thời gian làm bài: "+Integer.toString(minutes) + ":" + secondsString);
         txtSoCauDung.setText("Số câu đúng: " + Common.SO_CAU_DUNG + "/" + chiTietBaiLam.size());
