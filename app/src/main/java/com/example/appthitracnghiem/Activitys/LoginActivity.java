@@ -31,7 +31,10 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(view -> {
             String username = usernameEditText.getText().toString();
             String password = passwordEditText.getText().toString();
-            if (!username.matches("") && !password.matches("")) {
+
+
+            if (!username.matches("(.*)\'(.*)") && !password.matches("")) {
+//            if (!username.matches("") && !password.matches("")) {
                 SQLiteDatabase db = Database.initDatabase(LoginActivity.this, Common.DATABASE_NAME);
                 try {
                     String sql = "SELECT * FROM HocSinh WHERE UserName = " + "'"+ username + "'";
@@ -65,7 +68,8 @@ public class LoginActivity extends AppCompatActivity {
                 else if(password.matches("")){
                     passwordEditText.setError("Chưa điền mật khẩu.");
                 }
-
+                else
+                    Toast.makeText(LoginActivity.this,"Tài khoản hoặc mật khẩu không hợp lệ.",Toast.LENGTH_LONG).show();
             }
 
 

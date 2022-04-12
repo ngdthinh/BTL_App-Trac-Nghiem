@@ -51,8 +51,7 @@ public class KetQuaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ket_qua);
 
 
-        System.out.println(Common.cauHoiList.get(0).getCauHoi());
-        System.out.println(Common.cauHoiList.get(0).getDapAn());
+
         stubList = findViewById(R.id.stub_list);
         stubGrid = findViewById(R.id.stub_grid);
 
