@@ -71,7 +71,7 @@ public class KetQuaActivity extends AppCompatActivity {
 //        super.onBackPressed();
         AlertDialog.Builder dialog = new AlertDialog.Builder(KetQuaActivity.this);
         dialog.setTitle("Thông báo");
-        dialog.setMessage("Bạn chắc chắn muốn rời đi ?");
+        dialog.setMessage("Bạn sẽ không thể xem lại. Bạn chắc chắn muốn rời đi ?");
         dialog.setIcon(R.drawable.warning);
 
         dialog.setPositiveButton("Có", new DialogInterface.OnClickListener() {
@@ -90,15 +90,6 @@ public class KetQuaActivity extends AppCompatActivity {
         dialog.show();
     }
 
-
-    //    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        if (Common.cauHoiList != null) {
-//            Common.cauHoiList.clear();
-//            Common.chiTietDeThiList.clear();
-//        }
-//    }
 
     private void addControlsInfor() {
         TextView txtDeThi = findViewById(R.id.txtDeThi);
