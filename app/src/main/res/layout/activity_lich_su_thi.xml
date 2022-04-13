@@ -32,13 +32,12 @@
         android:id="@+id/layoutMainTc"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="80dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutHeaderTC">
+        app:layout_constraintTop_toBottomOf="@id/layoutHeaderTC"
+        tools:layout_editor_absoluteX="8dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -50,7 +49,8 @@
             android:textStyle="bold" />
 
         <ListView
-            android:layout_width="wrap_content"
+            android:id="@+id/lstLichSuThi"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -60,14 +60,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layoutMainTc">
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/btnVaoThi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginLeft="8dp"/>
+            android:layout_weight="0.5"
+            android:backgroundTint="@color/colorTrendingStart"
+            android:onClick="openMonThiActivity"
+            android:text="Vào thi" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_weight="0.5"
+            android:backgroundTint="@color/colorTrendingStart"
+            android:onClick="openMonThiActivity"
+            android:text="Lịch thi" />
 
     </LinearLayout>
 

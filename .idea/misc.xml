@@ -45,13 +45,18 @@
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable/ic_launcher_background.xml" value="0.196" />
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_de_thi.xml" value="0.1" />
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_ket_qua.xml" value="0.27445652173913043" />
+        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_lich_su_thi.xml" value="0.36666666666666664" />
+        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_lich_su_thi_test.xml" value="0.1" />
+        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_lich_thi.xml" value="0.36666666666666664" />
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_lichsuthi.xml" value="0.36666666666666664" />
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_login.xml" value="0.18802083333333333" />
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_mon_thi.xml" value="0.36666666666666664" />
+        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_trang_chu.xml" value="0.36666666666666664" />
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/grid_ketquathi_t.xml" value="0.18802083333333333" />
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/item_dethi.xml" value="0.36666666666666664" />
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/item_grid_ketquathi_t.xml" value="0.18802083333333333" />
+        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/item_lich_su_thi_t.xml" value="0.36666666666666664" />
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/item_list_ketquathi_t.xml" value="0.18802083333333333" />
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/item_monthi.xml" value="0.18802083333333333" />
         <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/layout_bottom_question.xml" value="0.18802083333333333" />

@@ -7,21 +7,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Common {
-    public static final String DATABASE_NAME= "AppThiTracNghiem.db";
+    public static final String DATABASE_NAME = "AppThiTracNghiem.db";
 
-    public static  int ID_HOCSINH;
-    public static  String TEN_HOC_SINH;
-    public static  int LOP=12;
+    public static int ID_HOCSINH;
+    public static String TEN_HOC_SINH;
+    public static int LOP = 12;
 
-    public static  int IDDETHI;
-    public static String  TEN_DE_THI;
+    public static int IDDETHI;
+    public static String TEN_DE_THI;
 
-    public static  int IDMONTHI;
-    public static  int SOLUONGCAUHOI;
-    public static  int THOI_GIAN_THI; //giây
-    public static  int THOI_GIAN_LAM_BAI;
+    public static int IDMONTHI;
+    public static int SOLUONGCAUHOI;
+    public static int THOI_GIAN_THI; //giây
+    public static int THOI_GIAN_LAM_BAI;
     public static int SO_CAU_DUNG = 0;
 
-    public static List<ChiTietDeThi> chiTietDeThiList=new ArrayList<>();
-    public static List<CauHoi> cauHoiList=new ArrayList<>();
+    public static List<ChiTietDeThi> chiTietDeThiList = new ArrayList<>();
+    public static List<CauHoi> cauHoiList = new ArrayList<>();
 }

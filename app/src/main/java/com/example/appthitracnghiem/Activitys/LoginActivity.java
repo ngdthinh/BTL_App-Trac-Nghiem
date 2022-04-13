@@ -37,16 +37,16 @@ public class LoginActivity extends AppCompatActivity {
 //            if (!username.matches("") && !password.matches("")) {
                 SQLiteDatabase db = Database.initDatabase(LoginActivity.this, Common.DATABASE_NAME);
                 try {
-                    String sql = "SELECT * FROM HocSinh WHERE UserName = " + "'"+ username + "'";
-                        Cursor cursor = db.rawQuery(sql, null);
-                        cursor.moveToFirst();
+                    String sql = "SELECT * FROM HocSinh WHERE UserName = " + "'" + username + "'";
+                    Cursor cursor = db.rawQuery(sql, null);
+                    cursor.moveToFirst();
                     if (cursor.getCount() > 0) {
-                        String passDB =  cursor.getString(5);
+                        String passDB = cursor.getString(5);
                         if (passDB.equals(password)) {
-                            Common.ID_HOCSINH=cursor.getInt(0);
-                            Common.TEN_HOC_SINH=cursor.getString(1);
-                            Common.LOP=cursor.getInt(3);
-                            Intent i = new Intent(LoginActivity.this, MonThiActivity.class);
+                            Common.ID_HOCSINH = cursor.getInt(0);
+                            Common.TEN_HOC_SINH = cursor.getString(1);
+                            Common.LOP = cursor.getInt(3);
+                            Intent i = new Intent(LoginActivity.this, LichSuThiActivity.class);
                             startActivity(i);
                         } else {
                             passwordEditText.setText("");
@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     } else {
                         usernameEditText.setError("Tài khoản không tồn tại");
-                        Toast.makeText(LoginActivity.this,"Tài khoản không tồn tại.",Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this, "Tài khoản không tồn tại.", Toast.LENGTH_LONG).show();
                     }
                 } catch (Exception ex) {
                     finish();
@@ -62,14 +62,12 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
             } else {
-                if(username.matches("")){
+                if (username.matches("")) {
                     usernameEditText.setError("Chưa điền tài khoản.");
-                }
-                else if(password.matches("")){
+                } else if (password.matches("")) {
                     passwordEditText.setError("Chưa điền mật khẩu.");
-                }
-                else
-                    Toast.makeText(LoginActivity.this,"Tài khoản hoặc mật khẩu không hợp lệ.",Toast.LENGTH_LONG).show();
+                } else
+                    Toast.makeText(LoginActivity.this, "Tài khoản không hợp lệ.", Toast.LENGTH_LONG).show();
             }
 
 

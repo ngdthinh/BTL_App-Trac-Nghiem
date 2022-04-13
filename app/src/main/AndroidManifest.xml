@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppThiTracNghiem">
         <activity
+            android:name=".Activitys.LichSuThiActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activitys.MonThiActivity"
             android:exported="false" />
         <activity

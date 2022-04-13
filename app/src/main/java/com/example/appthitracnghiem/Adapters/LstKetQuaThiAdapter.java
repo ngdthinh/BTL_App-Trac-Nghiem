@@ -18,7 +18,7 @@ import java.util.List;
 
 public class LstKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
 
-    static List<ChiTietBaiLam> chiTietBaiLam;
+    static List<ChiTietBaiLam> lstChiTietBaiLam;
 
     public LstKetQuaThiAdapter(@NonNull Context context, int resource, @NonNull List<ChiTietBaiLam> objects) {
         super(context, resource, objects);
@@ -28,33 +28,31 @@ public class LstKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        View v = convertView;
-        if (v == null) {
-            v = View.inflate(parent.getContext(), R.layout.item_list_ketquathi_t, null);
-        }
-        else v = convertView;
+        convertView = View.inflate(parent.getContext(), R.layout.item_list_ketquathi_t, null);
 
         //Bind dữ liệu phần tử vào View
         ChiTietBaiLam chiTietBaiLam = getItem(position);
-        TextView txtCauHoiLst = v.findViewById(R.id.txtCauHoiLst);
-        TextView txtCauTraLoiLst = v.findViewById(R.id.txtCauTraLoiLst);
+
+        TextView txtCauHoiLst = convertView.findViewById(R.id.txtCauHoiLst);
+        TextView txtCauTraLoiLst = convertView.findViewById(R.id.txtCauTraLoiLst);
 
         txtCauHoiLst.setText(chiTietBaiLam.getCauHoi());
         txtCauTraLoiLst.setText(chiTietBaiLam.getDapAnChon());
 
-        return v;
+
+        return convertView;
     }
 
-    public static List<ChiTietBaiLam> getChiTietBaiLam() {
-        chiTietBaiLam = new ArrayList<>();
+    public static List<ChiTietBaiLam> getLstChiTietBaiLam() {
+        lstChiTietBaiLam = new ArrayList<>();
         String chiTietCauHoi, chiTietDapAn;
 
         for (int i = 0; i < Common.chiTietDeThiList.size(); i++) {
             chiTietCauHoi = Common.chiTietDeThiList.get(i).getChiTietCauHoi();
             chiTietDapAn = Common.chiTietDeThiList.get(i).getChiTietDapAn();
-            chiTietBaiLam.add(new ChiTietBaiLam(
+            lstChiTietBaiLam.add(new ChiTietBaiLam(
                     "Câu " + (i + 1), chiTietCauHoi, chiTietDapAn));
         }
-        return chiTietBaiLam;
+        return lstChiTietBaiLam;
     }
 }
