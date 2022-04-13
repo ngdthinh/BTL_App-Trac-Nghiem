@@ -1,19 +1,20 @@
 package com.example.appthitracnghiem.Model;
 
 public class DeThi {
-    private int IDDeThi,ThoiGianThi,IDMonThi,IDLop,SoLuongCauHoi;
-    private String TenDeThi;
+    private int IDDeThi,ThoiGianLamBai,IDMonThi,IDLop,SoLuongCauHoi;
+    private String TenDeThi,ThoiGianThi;
 
     public DeThi() {
     }
 
-    public DeThi(int IDDeThi, int thoiGianThi, int IDMonThi, int IDLop, int soLuongCauHoi, String tenDeThi) {
+    public DeThi(int IDDeThi, int thoiGianLamBai, int IDMonThi, int IDLop, int soLuongCauHoi, String tenDeThi, String thoiGianThi) {
         this.IDDeThi = IDDeThi;
-        ThoiGianThi = thoiGianThi;
+        ThoiGianLamBai = thoiGianLamBai;
         this.IDMonThi = IDMonThi;
         this.IDLop = IDLop;
         SoLuongCauHoi = soLuongCauHoi;
         TenDeThi = tenDeThi;
+        ThoiGianThi = thoiGianThi;
     }
 
     public int getIDDeThi() {
@@ -24,12 +25,12 @@ public class DeThi {
         this.IDDeThi = IDDeThi;
     }
 
-    public int getThoiGianThi() {
-        return ThoiGianThi;
+    public int getThoiGianLamBai() {
+        return ThoiGianLamBai;
     }
 
-    public void setThoiGianThi(int thoiGianThi) {
-        ThoiGianThi = thoiGianThi;
+    public void setThoiGianLamBai(int thoiGianLamBai) {
+        ThoiGianLamBai = thoiGianLamBai;
     }
 
     public int getIDMonThi() {
@@ -62,5 +63,13 @@ public class DeThi {
 
     public void setTenDeThi(String tenDeThi) {
         TenDeThi = tenDeThi;
+    }
+
+    public String getThoiGianThi() {
+        return ThoiGianThi;
+    }
+
+    public void setThoiGianThi(String thoiGianThi) {
+        ThoiGianThi = thoiGianThi;
     }
 }

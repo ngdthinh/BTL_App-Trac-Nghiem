@@ -53,6 +53,8 @@ public class MonThiActivity extends AppCompatActivity {
                 list.add(monThi);
                 cursor.moveToNext();
             }
+            cursor.close();
+            db.close();
         }
         catch(SQLException e) {
             Toast.makeText(MonThiActivity.this,"Lỗi kết nối tới CSDL",Toast.LENGTH_SHORT).show();

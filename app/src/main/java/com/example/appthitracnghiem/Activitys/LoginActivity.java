@@ -56,11 +56,12 @@ public class LoginActivity extends AppCompatActivity {
                         usernameEditText.setError("Tài khoản không tồn tại");
                         Toast.makeText(LoginActivity.this, "Tài khoản không tồn tại.", Toast.LENGTH_LONG).show();
                     }
+                    cursor.close();
+                    db.close();
                 } catch (Exception ex) {
                     finish();
                     startActivity(getIntent());
                 }
-
             } else {
                 if (username.matches("")) {
                     usernameEditText.setError("Chưa điền tài khoản.");

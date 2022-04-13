@@ -41,6 +41,7 @@ public class QuestionBottomSheetFragment extends BottomSheetDialogFragment {
         ItemQuestionBottomAdapter itemAdater = new ItemQuestionBottomAdapter(cauHoiList, new IClickListenerQuestionBottom() {
             @Override
             public void clickItemQuestion(int index) {
+                bottomSheetDialog.dismiss();
                 iClickListenerQuestionBottom.clickItemQuestion(index);
             }
         });

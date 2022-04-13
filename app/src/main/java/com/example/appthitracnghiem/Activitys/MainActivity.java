@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        System.out.println(Common.SOLUONGCAUHOI);
         addControls();
         addEventControls();
         getData(); //Lấy danh sách câu hỏi.
@@ -93,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 QuestionBottomSheetFragment questionBottomSheetFragment = new QuestionBottomSheetFragment(Common.cauHoiList, new IClickListenerQuestionBottom() {
                     @Override
                     public void clickItemQuestion(int index) {
+                        //chuyển đến câu hỏi tương ứng
                         view_pager.setCurrentItem(index);
                     }
                 });
@@ -110,7 +110,8 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{Common.IDMONTHI + "", Common.LOP + "", Common.SOLUONGCAUHOI + ""});
 
             cursor.moveToFirst();
-            while (!cursor.isAfterLast()) {
+            while (!cursor.isAfterLast())
+            {
                 CauHoi cauHoi = new CauHoi();
                 cauHoi.setIDCauHoi(cursor.getInt(0));
                 cauHoi.setCauHoi(cursor.getString(1));
@@ -123,10 +124,12 @@ public class MainActivity extends AppCompatActivity {
                 Common.cauHoiList.add(cauHoi);
                 cursor.moveToNext();
             }
-        } catch (SQLException e) {
+            cursor.close();
+            db.close();
+        }
+        catch (SQLException e) {
             Toast.makeText(MainActivity.this, "Lỗi kết nối tới CSDL", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     private void initListChiTietDeThi() {

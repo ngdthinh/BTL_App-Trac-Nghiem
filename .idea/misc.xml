@@ -7,62 +7,44 @@
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable-mdpi/bacground_gradient.xml" value="0.236" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable-mdpi/custom_bottom_question.xml" value="0.1835" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.236" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable-xhdpi/bacground_gradient.xml" value="0.2775" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable-xhdpi/header_back_t.xml" value="0.1835" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable-xhdpi/round_boder_answer_t.xml" value="0.114" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable/custom_bottom_question_active.xml" value="0.236" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable/custom_monthi.xml" value="0.1835" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/drawable/ic_launcher_background.xml" value="0.236" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/activity_de_thi.xml" value="0.25181159420289856" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/activity_ket_qua.xml" value="0.22282608695652173" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/activity_ket_qua_thi_t.xml" value="0.2572463768115942" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/activity_mon_thi.xml" value="0.22282608695652173" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/fragment_question.xml" value="0.22282608695652173" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/grid_ketquathi_t.xml" value="0.2572463768115942" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/item_dethi.xml" value="0.264" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/item_grid_ketquathi_t.xml" value="0.2572463768115942" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/item_list_ketquathi_t.xml" value="0.2572463768115942" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/item_monthi.xml" value="0.25181159420289856" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/layout_bottom_question.xml" value="0.25181159420289856" />
         <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.25181159420289856" />
-        <entry key="..\:/AppThiTracNgiem-main (1)/AppThiTracNgiem-main/app/src/main/res/drawable/header_back_t.xml" value="0.3665" />
-        <entry key="..\:/AppThiTracNgiem-main (1)/AppThiTracNgiem-main/app/src/main/res/drawable/round_boder_answer_t.xml" value="0.3665" />
-        <entry key="..\:/AppThiTracNgiem-main (1)/AppThiTracNgiem-main/app/src/main/res/drawable/round_border_t.xml" value="0.3665" />
-        <entry key="..\:/AppThiTracNgiem-main (1)/AppThiTracNgiem-main/app/src/main/res/drawable/white_back_t.xml" value="0.3665" />
-        <entry key="..\:/AppThiTracNgiem-main (1)/AppThiTracNgiem-main/app/src/main/res/layout/activity_de_thi.xml" value="0.348731884057971" />
-        <entry key="..\:/AppThiTracNgiem-main (1)/AppThiTracNgiem-main/app/src/main/res/layout/activity_ket_qua.xml" value="0.348731884057971" />
-        <entry key="..\:/AppThiTracNgiem-main (1)/AppThiTracNgiem-main/app/src/main/res/layout/activity_main.xml" value="0.348731884057971" />
-        <entry key="..\:/AppThiTracNgiem-main (1)/AppThiTracNgiem-main/app/src/main/res/layout/grid_ketquathi_t.xml" value="0.18802083333333333" />
-        <entry key="..\:/AppThiTracNgiem-main (1)/AppThiTracNgiem-main/app/src/main/res/layout/item_grid_ketquathi_t.xml" value="0.18802083333333333" />
-        <entry key="..\:/AppThiTracNgiem-main (1)/AppThiTracNgiem-main/app/src/main/res/layout/item_list_ketquathi_t.xml" value="0.18802083333333333" />
-        <entry key="..\:/AppThiTracNgiem-main (1)/AppThiTracNgiem-main/app/src/main/res/layout/list_ketquathi_t.xml" value="0.18802083333333333" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable-anydpi/ic_action_list.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable-mdpi/custom_bottom_question.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable-xhdpi/bacground_gradient.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable-xhdpi/header_back_t.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable-xhdpi/ic_launcher_background.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable-xhdpi/ic_launcher_foreground.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable-xhdpi/round_boder_answer_t.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable-xhdpi/round_border_t.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable-xhdpi/white_back_t.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable-xxhdpi/bacground_gradient.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable/custom_bottom_question_active.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/drawable/ic_launcher_background.xml" value="0.196" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_de_thi.xml" value="0.1" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_ket_qua.xml" value="0.27445652173913043" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_lich_su_thi.xml" value="0.36666666666666664" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_lich_su_thi_test.xml" value="0.1" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_lich_thi.xml" value="0.36666666666666664" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_lichsuthi.xml" value="0.36666666666666664" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_login.xml" value="0.18802083333333333" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_mon_thi.xml" value="0.36666666666666664" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/activity_trang_chu.xml" value="0.36666666666666664" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/grid_ketquathi_t.xml" value="0.18802083333333333" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/item_dethi.xml" value="0.36666666666666664" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/item_grid_ketquathi_t.xml" value="0.18802083333333333" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/item_lich_su_thi_t.xml" value="0.36666666666666664" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/item_list_ketquathi_t.xml" value="0.18802083333333333" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/item_monthi.xml" value="0.18802083333333333" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/layout_bottom_question.xml" value="0.18802083333333333" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.36666666666666664" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/layout/list_ketquathi_t.xml" value="0.18802083333333333" />
-        <entry key="..\:/AppThiTracNgiem/AppThiTracNgiem-main/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.196" />
+        <entry key="..\:/AppThiTracNghiem/app/src/main/res/layout/list_ketquathi_t.xml" value="0.2572463768115942" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable-mdpi/custom_bottom_question.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable-xhdpi/bacground_gradient.xml" value="0.1315" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable-xhdpi/custom_bottom_question.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable-xhdpi/custom_bottom_question_active.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable/bacground_gradient.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable/custom_bottom_question_active.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable/custom_monthi.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/activity_de_thi.xml" value="0.10277777777777777" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/activity_ket_qua.xml" value="0.25" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/activity_main.xml" value="0.10277777777777777" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/activity_mon_thi.xml" value="0.25" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/fragment_question.xml" value="0.10277777777777777" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/grid_ketquathi_t.xml" value="0.10277777777777777" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/item_dethi.xml" value="0.264" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/item_monthi.xml" value="0.264" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/layout_bottom_question.xml" value="0.25" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.25" />
       </map>
     </option>
   </component>
