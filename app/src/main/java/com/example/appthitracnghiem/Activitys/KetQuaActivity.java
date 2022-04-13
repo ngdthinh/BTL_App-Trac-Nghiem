@@ -50,12 +50,10 @@ public class KetQuaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ket_qua);
 
-
         System.out.println(Common.cauHoiList.get(0).getCauHoi());
         System.out.println(Common.cauHoiList.get(0).getDapAn());
         stubList = findViewById(R.id.stub_list);
         stubGrid = findViewById(R.id.stub_grid);
-
 
         stubList.inflate();
 
@@ -64,7 +62,6 @@ public class KetQuaActivity extends AppCompatActivity {
         //Insert kq thi vào CSDL
         insertDBketquathi();
     }
-
 
 
     private void addControlsInfor() {
@@ -80,7 +77,6 @@ public class KetQuaActivity extends AppCompatActivity {
         if (seconds <= 9) {
             secondsString = "0" + secondsString;
         }
-
         txtDeThi.setText("Đề thi: "+Common.TEN_DE_THI);
         txtThoiGianLamBai.setText("Thời gian làm bài: "+Integer.toString(minutes) + ":" + secondsString);
         txtSoCauDung.setText("Số câu đúng: " + Common.SO_CAU_DUNG + "/" + chiTietBaiLam.size());
@@ -92,23 +88,18 @@ public class KetQuaActivity extends AppCompatActivity {
 
 
     public void swtichLayout(View view) {
-
-
         if (VIEW_MODE_GRIDVIEW == currentViewMode) {
             currentViewMode = VIEW_MODE_LISTVIEW;
         } else {
             currentViewMode = VIEW_MODE_GRIDVIEW;
         }
-
         switchView();
     }
 
     private void switchView() {
         ImageView switchIcon = findViewById(R.id.switchIcon);
         if (VIEW_MODE_GRIDVIEW == currentViewMode) {
-
             switchIcon.setImageResource(R.drawable.ic_grid_t);
-
             stubGrid.setVisibility(View.VISIBLE);
             stubList.setVisibility(View.GONE);
 
@@ -143,7 +134,6 @@ public class KetQuaActivity extends AppCompatActivity {
     private void insertDBketquathi() {
 
         KetQua ketQua = new KetQua(Common.IDDETHI,Common.ID_HOCSINH,DiemBaiThi);
-
         ContentValues contentValues = new ContentValues();
         contentValues.put("IDDeThi",ketQua.getIDDeThi());
         contentValues.put("IDHocSinh",ketQua.getIDHocSinh());
@@ -152,6 +142,7 @@ public class KetQuaActivity extends AppCompatActivity {
             try {
                 SQLiteDatabase db= Database.initDatabase(KetQuaActivity.this, Common.DATABASE_NAME);
                 db.insert("KetQua",null,contentValues);
+                db.close();
             }
             catch(SQLException e) {
                 Toast.makeText(KetQuaActivity.this,"Lỗi kết nối tới CSDL",Toast.LENGTH_SHORT).show();

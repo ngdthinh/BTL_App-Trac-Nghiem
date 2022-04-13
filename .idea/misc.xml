@@ -34,8 +34,17 @@
         <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable/bacground_gradient.xml" value="0.1665" />
         <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable/custom_bottom_question_active.xml" value="0.1665" />
         <entry key="..\:/AppThiTracNgiem/app/src/main/res/drawable/custom_monthi.xml" value="0.1665" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/activity_de_thi.xml" value="0.10277777777777777" />
         <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/activity_ket_qua.xml" value="0.25" />
         <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/activity_main.xml" value="0.10277777777777777" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/activity_mon_thi.xml" value="0.25" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/fragment_question.xml" value="0.10277777777777777" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/grid_ketquathi_t.xml" value="0.10277777777777777" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/item_dethi.xml" value="0.264" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/item_monthi.xml" value="0.264" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/layout_bottom_question.xml" value="0.25" />
+        <entry key="..\:/AppThiTracNgiem/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.25" />
       </map>
     </option>
   </component>
