@@ -70,36 +70,42 @@ public class DeThiAdapter extends RecyclerView.Adapter<DeThiAdapter.DeThiHolder>
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
-                //Lay thoi gian hien tai va thoi gian thi
-                Calendar calendar = Calendar.getInstance();
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-
-                Date crtime=  calendar.getTime();
-                Date timecsdl=null;
-                try {
-                    timecsdl= simpleDateFormat.parse(deThi.getThoiGianThi());
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-
-                //thoi gian ket thuc
-                calendar.setTime(timecsdl);
-                calendar.add(Calendar.MINUTE,deThi.getThoiGianLamBai());
-                Date timeend=calendar.getTime();
-
-                if(timecsdl.compareTo(crtime)>0)
-                    Toast.makeText(context, "Hiện chưa tới giờ thi vui lòng quay lại sau !", Toast.LENGTH_SHORT).show();
-                else if(crtime.compareTo(timeend)>0)
-                    Toast.makeText(context, "Đã hết thời gian làm bài thi !", Toast.LENGTH_SHORT).show();
-                else {
-                    //Chuyển sang activity main
-                    Intent intent = new Intent(context, MainActivity.class);
-                    Common.IDDETHI = deThi.getIDDeThi();
-                    Common.THOI_GIAN_THI=deThi.getThoiGianLamBai()*60; //giây
-                    Common.SOLUONGCAUHOI=deThi.getSoLuongCauHoi();
-                    Common.TEN_DE_THI=deThi.getTenDeThi();
-                    context.startActivity(intent);
-                }
+//                //Lay thoi gian hien tai va thoi gian thi
+//                Calendar calendar = Calendar.getInstance();
+//                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+//
+//                Date crtime=  calendar.getTime();
+//                Date timecsdl=null;
+//                try {
+//                    timecsdl= simpleDateFormat.parse(deThi.getThoiGianThi());
+//                } catch (ParseException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                //thoi gian ket thuc
+//                calendar.setTime(timecsdl);
+//                calendar.add(Calendar.MINUTE,deThi.getThoiGianLamBai());
+//                Date timeend=calendar.getTime();
+//
+//                if(timecsdl.compareTo(crtime)>0)
+//                    Toast.makeText(context, "Hiện chưa tới giờ thi vui lòng quay lại sau !", Toast.LENGTH_SHORT).show();
+//                else if(crtime.compareTo(timeend)>0)
+//                    Toast.makeText(context, "Đã hết thời gian làm bài thi !", Toast.LENGTH_SHORT).show();
+//                else {
+//                    //Chuyển sang activity main
+//                    Intent intent = new Intent(context, MainActivity.class);
+//                    Common.IDDETHI = deThi.getIDDeThi();
+//                    Common.THOI_GIAN_THI=deThi.getThoiGianLamBai()*60; //giây
+//                    Common.SOLUONGCAUHOI=deThi.getSoLuongCauHoi();
+//                    Common.TEN_DE_THI=deThi.getTenDeThi();
+//                    context.startActivity(intent);
+//                }
+                Intent intent = new Intent(context, MainActivity.class);
+                Common.IDDETHI = deThi.getIDDeThi();
+                Common.THOI_GIAN_THI = deThi.getThoiGianLamBai() * 60; //giây
+                Common.SOLUONGCAUHOI = deThi.getSoLuongCauHoi();
+                Common.TEN_DE_THI = deThi.getTenDeThi();
+                context.startActivity(intent);
             }
         });
     }

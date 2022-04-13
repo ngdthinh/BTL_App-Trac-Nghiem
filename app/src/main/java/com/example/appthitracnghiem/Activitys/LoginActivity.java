@@ -16,9 +16,9 @@ import com.example.appthitracnghiem.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText usernameEditText;
-    EditText passwordEditText;
-    Button loginButton;
+    private EditText usernameEditText;
+    private EditText passwordEditText;
+    private Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

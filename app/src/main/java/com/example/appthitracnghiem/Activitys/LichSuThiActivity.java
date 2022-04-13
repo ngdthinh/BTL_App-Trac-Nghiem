@@ -1,12 +1,16 @@
 package com.example.appthitracnghiem.Activitys;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -22,8 +26,8 @@ import java.util.List;
 
 public class LichSuThiActivity extends AppCompatActivity {
 
-    ListView lstView;
-    LichSuThiAdapters lichSuThiAdapters;
+    private ListView lstView;
+    private LichSuThiAdapters lichSuThiAdapters;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,28 @@ public class LichSuThiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lich_su_thi);
 
         addConTrolsLst();
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Thông báo");
+        dialog.setMessage("Bạn chắc chắn muốn thoát?");
+        dialog.setIcon(R.drawable.warning);
+
+        dialog.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        dialog.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        dialog.show();
     }
 
     private void addConTrolsLst() {
@@ -42,10 +68,6 @@ public class LichSuThiActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-    }
 
     public List<LichSuThi> getChiTietDeThiList() {
         List<LichSuThi> listLicSuThi = new ArrayList<>();
@@ -67,6 +89,14 @@ public class LichSuThiActivity extends AppCompatActivity {
         }
         return listLicSuThi;
     }
+
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        addConTrolsLst();
+    }
+
 
     public void openMonThiActivity(View view) {
         Intent i = new Intent(this, MonThiActivity.class);

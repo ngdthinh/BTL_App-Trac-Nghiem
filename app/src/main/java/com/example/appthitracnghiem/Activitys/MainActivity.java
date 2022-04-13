@@ -43,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        if (Common.cauHoiList != null) {
+//            Common.cauHoiList = null;
+//            Common.chiTietDeThiList = null;
+//        }
         addControls();
         addEventControls();
         getData(); //Lấy danh sách câu hỏi.
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         QuestionFragmentAdapter questionFragmentAdapter = new QuestionFragmentAdapter(this, Common.cauHoiList);
         view_pager.setAdapter(questionFragmentAdapter);
     }
+
 
     private void addControls() {
         tv_nopbai = findViewById(R.id.tv_nopbai);
@@ -110,8 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{Common.IDMONTHI + "", Common.LOP + "", Common.SOLUONGCAUHOI + ""});
 
             cursor.moveToFirst();
-            while (!cursor.isAfterLast())
-            {
+            while (!cursor.isAfterLast()) {
                 CauHoi cauHoi = new CauHoi();
                 cauHoi.setIDCauHoi(cursor.getInt(0));
                 cauHoi.setCauHoi(cursor.getString(1));
@@ -126,15 +130,14 @@ public class MainActivity extends AppCompatActivity {
             }
             cursor.close();
             db.close();
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             Toast.makeText(MainActivity.this, "Lỗi kết nối tới CSDL", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void initListChiTietDeThi() {
         for (int i = 0; i < Common.cauHoiList.size(); i++) {
-            ChiTietDeThi chiTietDeThi = new ChiTietDeThi(Common.IDDETHI, Common.cauHoiList.get(i).getIDCauHoi(),Common.ID_HOCSINH, null);
+            ChiTietDeThi chiTietDeThi = new ChiTietDeThi(Common.IDDETHI, Common.cauHoiList.get(i).getIDCauHoi(), Common.ID_HOCSINH, null);
             Common.chiTietDeThiList.add(chiTietDeThi);
         }
     }
@@ -164,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         if (seconds <= 9) {
             secondsString = "0" + secondsString;
         }
-        tv_timer.setText( Integer.toString(minutes) + ":" + secondsString);
+        tv_timer.setText(Integer.toString(minutes) + ":" + secondsString);
     }
 
     private void callKetQuaThiActivity() {
@@ -183,20 +186,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void insertChiTietDeThi() {
-        for (int i=0;i<Common.chiTietDeThiList.size();i++){
+        for (int i = 0; i < Common.chiTietDeThiList.size(); i++) {
             ChiTietDeThi chiTietDeThi = Common.chiTietDeThiList.get(i);
             ContentValues contentValues = new ContentValues();
-            contentValues.put("IDDeThi",chiTietDeThi.getIDDeThi());
-            contentValues.put("IDCauHoi",chiTietDeThi.getIDCauHoi());
-            contentValues.put("IDHocSinh",chiTietDeThi.getIDHocSinh());
-            contentValues.put("DapAnLuaChon",chiTietDeThi.getDapAnLuaChon());
+            contentValues.put("IDDeThi", chiTietDeThi.getIDDeThi());
+            contentValues.put("IDCauHoi", chiTietDeThi.getIDCauHoi());
+            contentValues.put("IDHocSinh", chiTietDeThi.getIDHocSinh());
+            contentValues.put("DapAnLuaChon", chiTietDeThi.getDapAnLuaChon());
 
             try {
-                SQLiteDatabase db= Database.initDatabase(MainActivity.this, Common.DATABASE_NAME);
-                db.insert("ChiTietDeThi",null,contentValues);
-            }
-            catch(SQLException e) {
-                Toast.makeText(MainActivity.this,"Lỗi kết nối tới CSDL",Toast.LENGTH_SHORT).show();
+                SQLiteDatabase db = Database.initDatabase(MainActivity.this, Common.DATABASE_NAME);
+                db.insert("ChiTietDeThi", null, contentValues);
+            } catch (SQLException e) {
+                Toast.makeText(MainActivity.this, "Lỗi kết nối tới CSDL", Toast.LENGTH_SHORT).show();
             }
         }
     }

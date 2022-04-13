@@ -1,10 +1,10 @@
 package com.example.appthitracnghiem.Model;
 
 public class ChiTietBaiLam {
-    String soCauHoi;
-    int linkAnh;
-    String cauHoi;
-    String dapAnChon;
+    private String soCauHoi;
+    private int linkAnh;
+    private String cauHoi;
+    private String dapAnChon;
 
     public ChiTietBaiLam() {
     }

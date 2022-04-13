@@ -1,9 +1,12 @@
 package com.example.appthitracnghiem.Activitys;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -31,14 +34,14 @@ import java.util.List;
 
 public class KetQuaActivity extends AppCompatActivity {
 
-    ViewStub stubGrid;
-    ViewStub stubList;
-    ListView listView;
-    GridView gridView;
+    private ViewStub stubGrid;
+    private ViewStub stubList;
+    private ListView listView;
+    private GridView gridView;
 
-    GrdKetQuaThiAdapter grdKetQuaThiAdapter;
-     LstKetQuaThiAdapter lstKetQuaThiAdapter;
-    List<ChiTietBaiLam> chiTietBaiLam;
+    private GrdKetQuaThiAdapter grdKetQuaThiAdapter;
+    private LstKetQuaThiAdapter lstKetQuaThiAdapter;
+    private List<ChiTietBaiLam> chiTietBaiLam;
     int currentViewMode = 0;
 
     double DiemBaiThi;
@@ -63,13 +66,46 @@ public class KetQuaActivity extends AppCompatActivity {
         insertDBketquathi();
     }
 
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        AlertDialog.Builder dialog = new AlertDialog.Builder(KetQuaActivity.this);
+        dialog.setTitle("Thông báo");
+        dialog.setMessage("Bạn chắc chắn muốn rời đi ?");
+        dialog.setIcon(R.drawable.warning);
+
+        dialog.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                Intent intent = new Intent(KetQuaActivity.this, LichSuThiActivity.class);
+                startActivity(intent);
+            }
+        });
+        dialog.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        dialog.show();
+    }
+
+
+    //    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        if (Common.cauHoiList != null) {
+//            Common.cauHoiList.clear();
+//            Common.chiTietDeThiList.clear();
+//        }
+//    }
 
     private void addControlsInfor() {
         TextView txtDeThi = findViewById(R.id.txtDeThi);
         TextView txtThoiGianLamBai = findViewById(R.id.txtThoiGianLam);
         TextView txtSoCauDung = findViewById(R.id.txtSoCauDung);
         TextView txtDiem = findViewById(R.id.txtDiem);
-        TextView txtTenHS=findViewById(R.id.tv_TenHocSinh);
+        TextView txtTenHS = findViewById(R.id.tv_TenHocSinh);
 
         int minutes = Common.THOI_GIAN_LAM_BAI / 60;
         int seconds = Common.THOI_GIAN_LAM_BAI - (minutes * 60);
@@ -77,11 +113,11 @@ public class KetQuaActivity extends AppCompatActivity {
         if (seconds <= 9) {
             secondsString = "0" + secondsString;
         }
-        txtDeThi.setText("Đề thi: "+Common.TEN_DE_THI);
-        txtThoiGianLamBai.setText("Thời gian làm bài: "+Integer.toString(minutes) + ":" + secondsString);
+        txtDeThi.setText("Đề thi: " + Common.TEN_DE_THI);
+        txtThoiGianLamBai.setText("Thời gian làm bài: " + Integer.toString(minutes) + ":" + secondsString);
         txtSoCauDung.setText("Số câu đúng: " + Common.SO_CAU_DUNG + "/" + chiTietBaiLam.size());
-        txtTenHS.setText("Tên học sinh: "+Common.TEN_HOC_SINH);
-        DiemBaiThi=Common.SO_CAU_DUNG * 1.0 / chiTietBaiLam.size() * 10;
+        txtTenHS.setText("Tên học sinh: " + Common.TEN_HOC_SINH);
+        DiemBaiThi = Common.SO_CAU_DUNG * 1.0 / chiTietBaiLam.size() * 10;
         txtDiem.setText("Điểm: " + String.valueOf(DiemBaiThi));
 
     }
@@ -131,21 +167,21 @@ public class KetQuaActivity extends AppCompatActivity {
 
         gridView.setAdapter(grdKetQuaThiAdapter);
     }
+
     private void insertDBketquathi() {
 
-        KetQua ketQua = new KetQua(Common.IDDETHI,Common.ID_HOCSINH,DiemBaiThi);
+        KetQua ketQua = new KetQua(Common.IDDETHI, Common.ID_HOCSINH, DiemBaiThi);
         ContentValues contentValues = new ContentValues();
-        contentValues.put("IDDeThi",ketQua.getIDDeThi());
-        contentValues.put("IDHocSinh",ketQua.getIDHocSinh());
-        contentValues.put("Diem",DiemBaiThi);
+        contentValues.put("IDDeThi", ketQua.getIDDeThi());
+        contentValues.put("IDHocSinh", ketQua.getIDHocSinh());
+        contentValues.put("Diem", DiemBaiThi);
 
-            try {
-                SQLiteDatabase db= Database.initDatabase(KetQuaActivity.this, Common.DATABASE_NAME);
-                db.insert("KetQua",null,contentValues);
-                db.close();
-            }
-            catch(SQLException e) {
-                Toast.makeText(KetQuaActivity.this,"Lỗi kết nối tới CSDL",Toast.LENGTH_SHORT).show();
-            }
+        try {
+            SQLiteDatabase db = Database.initDatabase(KetQuaActivity.this, Common.DATABASE_NAME);
+            db.insert("KetQua", null, contentValues);
+            db.close();
+        } catch (SQLException e) {
+            Toast.makeText(KetQuaActivity.this, "Lỗi kết nối tới CSDL", Toast.LENGTH_SHORT).show();
+        }
     }
 }

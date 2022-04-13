@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GrdKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
 
-    static List<ChiTietBaiLam> lstChiTietBaiLam;
+    private static List<ChiTietBaiLam> lstChiTietBaiLam;
 
     public GrdKetQuaThiAdapter(@NonNull Context context, int resource, @NonNull List<ChiTietBaiLam> objects) {
         super(context, resource, objects);
