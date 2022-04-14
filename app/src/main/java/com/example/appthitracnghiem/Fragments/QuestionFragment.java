@@ -94,23 +94,6 @@ public class QuestionFragment extends Fragment {
                 tv_AnswerD.setBackgroundResource(R.color.purple_200);
             }
         });
-        if(Common.chiTietDeThiList.get(index).getDapAnLuaChon()!=null)
-        {
-            switch (Common.chiTietDeThiList.get(index).getDapAnLuaChon()){
-                case "A":
-                    tv_AnswerA.setBackgroundResource(R.color.purple_200);
-                    break;
-                case "B":
-                    tv_AnswerB.setBackgroundResource(R.color.purple_200);
-                    break;
-                case "C":
-                    tv_AnswerC.setBackgroundResource(R.color.purple_200);
-                    break;
-                case "D":
-                    tv_AnswerD.setBackgroundResource(R.color.purple_200);
-                    break;
-            }
-        }
         return mView;
     }
     private void resetBackground(){

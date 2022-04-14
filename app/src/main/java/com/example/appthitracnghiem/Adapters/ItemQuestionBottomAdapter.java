@@ -42,6 +42,9 @@ public class ItemQuestionBottomAdapter extends RecyclerView.Adapter<ItemQuestion
 
         if(Common.chiTietDeThiList.get(position).getDapAnLuaChon()!=null)
             holder.tvQuestion.setBackgroundResource(R.drawable.custom_bottom_question_active);
+        else
+            holder.tvQuestion.setBackgroundResource(R.drawable.custom_bottom_question);
+
         holder.tvQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
