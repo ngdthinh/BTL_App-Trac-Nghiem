@@ -36,7 +36,7 @@ public class LstKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
         TextView txtCauHoiLst = convertView.findViewById(R.id.txtCauHoiLst);
         TextView txtCauTraLoiLst = convertView.findViewById(R.id.txtCauTraLoiLst);
 
-        txtSoThuTu.setText(chiTietBaiLam.getSoThuTu() + ": ");
+        txtSoThuTu.setText("Câu "+chiTietBaiLam.getSoThuTu() + ": ");
         txtCauHoiLst.setText(chiTietBaiLam.getCauHoi());
         txtCauTraLoiLst.setText(chiTietBaiLam.getDapAnChon());
 
@@ -51,8 +51,7 @@ public class LstKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
         for (int i = 0; i < Common.chiTietDeThiList.size(); i++) {
             chiTietCauHoi = Common.chiTietDeThiList.get(i).getChiTietCauHoi();
             chiTietDapAn = Common.chiTietDeThiList.get(i).getChiTietDapAn();
-            lstChiTietBaiLam.add(new ChiTietBaiLam(
-                    "Câu " + (i + 1), chiTietCauHoi, chiTietDapAn));
+            lstChiTietBaiLam.add(new ChiTietBaiLam((i + 1), chiTietCauHoi, chiTietDapAn));
         }
         return lstChiTietBaiLam;
     }

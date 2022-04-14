@@ -27,22 +27,16 @@ public class GrdKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//        return super.getView(position, convertView, parent);
-
         convertView = View.inflate(parent.getContext(), R.layout.item_grid_ketquathi_t, null);
-
 
         ChiTietBaiLam chiTietBaiLam = getItem(position);
 
         TextView txtCauHoiGrd = convertView.findViewById(R.id.txtCauHoiGrd);
         ImageView imvKiemTraDapAn = convertView.findViewById(R.id.imvKiemTraDapAn);
 
-
-        txtCauHoiGrd.setText(chiTietBaiLam.getSoThuTu());
+        txtCauHoiGrd.setText("Câu "+chiTietBaiLam.getSoThuTu());
         imvKiemTraDapAn.setImageResource(chiTietBaiLam.getLinkAnh());
 
-
-//        return v;
         return convertView;
 
     }
@@ -57,14 +51,14 @@ public class GrdKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
             dapAnDung = Common.cauHoiList.get(i).getDapAn();
             if (dapAnNguoiDung == null) {
                 lstChiTietBaiLam.add(new ChiTietBaiLam(
-                        "Câu " + (i + 1), R.drawable.ic_miss_t));
+                        (i + 1), R.drawable.ic_miss_t));
             } else if (dapAnNguoiDung.equals(dapAnDung)) {
                 Common.SO_CAU_DUNG += 1;
                 lstChiTietBaiLam.add(new ChiTietBaiLam(
-                        "Câu " + (i + 1), R.drawable.ic_true_t));
+                        (i + 1), R.drawable.ic_true_t));
             } else
                 lstChiTietBaiLam.add(new ChiTietBaiLam(
-                        "Câu " + (i + 1), R.drawable.ic_false_t));
+                        (i + 1), R.drawable.ic_false_t));
         }
         return lstChiTietBaiLam;
     }

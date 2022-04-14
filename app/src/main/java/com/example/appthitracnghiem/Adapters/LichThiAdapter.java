@@ -22,7 +22,6 @@ public class LichThiAdapter extends ArrayAdapter<LichThi> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//        return super.getView(position, convertView, parent);
 
         convertView = View.inflate(parent.getContext(), R.layout.item_lich_thi_t, null);
 

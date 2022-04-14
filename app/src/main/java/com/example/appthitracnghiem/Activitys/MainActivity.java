@@ -43,10 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        if (Common.cauHoiList != null) {
-//            Common.cauHoiList = null;
-//            Common.chiTietDeThiList = null;
-//        }
+
         addControls();
         addEventControls();
         getData(); //Lấy danh sách câu hỏi.
@@ -123,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
                 cauHoi.setDapAnB(cursor.getString(3));
                 cauHoi.setDapAnC(cursor.getString(4));
                 cauHoi.setDapAnD(cursor.getString(5));
-                //bổ sung thêm chỗ này
                 cauHoi.setDapAn(cursor.getString(6));
                 Common.cauHoiList.add(cauHoi);
                 cursor.moveToNext();
@@ -137,8 +133,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initListChiTietDeThi() {
         for (int i = 0; i < Common.cauHoiList.size(); i++) {
-//            ChiTietDeThi chiTietDeThi = new ChiTietDeThi(Common.IDDETHI, Common.cauHoiList.get(i).getIDCauHoi(), Common.ID_HOCSINH, null);
-            //sua o day 1
             ChiTietDeThi chiTietDeThi = new ChiTietDeThi(Common.IDDETHI,
                     Common.cauHoiList.get(i).getIDCauHoi(), Common.ID_HOCSINH, null,
                     Common.cauHoiList.get(i).getCauHoi());
