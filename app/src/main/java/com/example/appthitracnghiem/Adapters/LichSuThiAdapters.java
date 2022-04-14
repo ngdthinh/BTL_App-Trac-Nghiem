@@ -31,9 +31,11 @@ public class LichSuThiAdapters extends ArrayAdapter<LichSuThi> {
         LichSuThi lichSuThi = getItem(position);
         TextView txtTenDeThi = convertView.findViewById(R.id.txtTenDeThi);
         TextView txtDiem = convertView.findViewById(R.id.txtDiemThi);
+        TextView txtTenMonThiLS = convertView.findViewById(R.id.txtTenMonThiLS);
 
-        txtTenDeThi.setText(lichSuThi.getTenDeThi());
-        txtDiem.setText(lichSuThi.getDiem() + "");
+        txtTenMonThiLS.setText("Môn Thi: " + lichSuThi.getTenMonThi());
+        txtTenDeThi.setText("Đề Thi: " + lichSuThi.getTenDeThi());
+        txtDiem.setText("Điểm: " + lichSuThi.getDiem() + "");
 
         return convertView;
     }

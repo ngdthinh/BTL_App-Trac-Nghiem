@@ -81,10 +81,20 @@
             android:layout_marginRight="8dp"
             android:layout_weight="0.5"
             android:backgroundTint="@color/colorTrendingStart"
-            android:onClick="openMonThiActivity"
+            android:onClick="openLichThiActivity"
             android:text="Lịch thi" />
-
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtAlertLST"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Hiện chưa có lịch sử thi nào"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

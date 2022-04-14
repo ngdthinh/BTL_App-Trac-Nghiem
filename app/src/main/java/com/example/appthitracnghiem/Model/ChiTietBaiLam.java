@@ -1,7 +1,7 @@
 package com.example.appthitracnghiem.Model;
 
 public class ChiTietBaiLam {
-    private String soCauHoi;
+    private String soThuTu;
     private int linkAnh;
     private String cauHoi;
     private String dapAnChon;
@@ -9,24 +9,24 @@ public class ChiTietBaiLam {
     public ChiTietBaiLam() {
     }
 
-    public ChiTietBaiLam(String soCauHoi, int linkAnh) {
-        this.soCauHoi = soCauHoi;
+    public ChiTietBaiLam(String soThuTu, int linkAnh) {
+        this.soThuTu = soThuTu;
         this.linkAnh = linkAnh;
     }
 
 
-    public ChiTietBaiLam(String soCauHoi, String cauHoi, String dapAnChon) {
-        this.soCauHoi = soCauHoi;
+    public ChiTietBaiLam(String soThuTu, String cauHoi, String dapAnChon) {
+        this.soThuTu = soThuTu;
         this.cauHoi = cauHoi;
         this.dapAnChon = dapAnChon;
     }
 
-    public String getSoCauHoi() {
-        return soCauHoi;
+    public String getSoThuTu() {
+        return soThuTu;
     }
 
-    public void setSoCauHoi(String soCauHoi) {
-        this.soCauHoi = soCauHoi;
+    public void setSoThuTu(String soThuTu) {
+        this.soThuTu = soThuTu;
     }
 
     public int getLinkAnh() {

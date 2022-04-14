@@ -19,7 +19,6 @@ import java.util.List;
 
 public class GrdKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
 
-    private static List<ChiTietBaiLam> lstChiTietBaiLam;
 
     public GrdKetQuaThiAdapter(@NonNull Context context, int resource, @NonNull List<ChiTietBaiLam> objects) {
         super(context, resource, objects);
@@ -39,7 +38,7 @@ public class GrdKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
         ImageView imvKiemTraDapAn = convertView.findViewById(R.id.imvKiemTraDapAn);
 
 
-        txtCauHoiGrd.setText(chiTietBaiLam.getSoCauHoi());
+        txtCauHoiGrd.setText(chiTietBaiLam.getSoThuTu());
         imvKiemTraDapAn.setImageResource(chiTietBaiLam.getLinkAnh());
 
 
@@ -49,7 +48,7 @@ public class GrdKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
     }
 
     public static List<ChiTietBaiLam> getLstChiTietBaiLam() {
-        lstChiTietBaiLam = new ArrayList<>();
+        List<ChiTietBaiLam> lstChiTietBaiLam = new ArrayList<>();
         String dapAnNguoiDung = "";
         String dapAnDung = "";
         Common.SO_CAU_DUNG = 0;

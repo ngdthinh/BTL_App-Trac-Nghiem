@@ -9,10 +9,9 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.appthitracnghiem.Adapters.LichSuThiAdapters;
@@ -26,6 +25,7 @@ import java.util.List;
 
 public class LichSuThiActivity extends AppCompatActivity {
 
+    private TextView txtAlertLST;
     private ListView lstView;
     private LichSuThiAdapters lichSuThiAdapters;
 
@@ -48,7 +48,7 @@ public class LichSuThiActivity extends AppCompatActivity {
         dialog.setPositiveButton("Có", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                finish();
+                finishAffinity();
             }
         });
         dialog.setNegativeButton("Không", new DialogInterface.OnClickListener() {
@@ -60,34 +60,45 @@ public class LichSuThiActivity extends AppCompatActivity {
     }
 
     private void addConTrolsLst() {
+        txtAlertLST = findViewById(R.id.txtAlertLST);
         lstView = findViewById(R.id.lstLichSuThi);
         lichSuThiAdapters = new LichSuThiAdapters(
-                this, R.layout.item_lich_su_thi_t, getChiTietDeThiList());
+                this, R.layout.item_lich_su_thi_t, getLichSuThiList());
 
         lstView.setAdapter(lichSuThiAdapters);
 
     }
 
 
-    public List<LichSuThi> getChiTietDeThiList() {
-        List<LichSuThi> listLicSuThi = new ArrayList<>();
+    private List<LichSuThi> getLichSuThiList() {
+        List<LichSuThi> listLichSuThi = new ArrayList<>();
         try {
             SQLiteDatabase db = Database.initDatabase(this, Common.DATABASE_NAME);
-            Cursor cursor = db.rawQuery("SELECT distinct d.TenDeThi, k.Diem" +
-                    " FROM KetQua AS k, DeThi AS d, HocSinh AS h" +
-                    " WHERE k.IDHocSinh=h.IDHocSinh and k.IDDeThi=d.IDDeThi ", null);
+//            Cursor cursor = db.rawQuery("SELECT distinct d.TenDeThi, k.Diem" +
+//                    " FROM KetQua AS k, DeThi AS d, HocSinh AS h" +
+//                    " WHERE k.IDHocSinh=h.IDHocSinh and k.IDDeThi=d.IDDeThi ", null);
+            Cursor cursor = db.rawQuery("SELECT dt.TenDeThi, kq.Diem, mt.TenMon " +
+                    "FROM KetQua kq, DeThi dt, HocSinh hs, MonThi mt " +
+                    "WHERE kq.IDHocSinh=hs.IDHocSinh AND kq.IDDeThi=dt.IDDeThi " +
+                    "AND dt.IDMonThi=mt.IDMonThi", null);
+
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
-                LichSuThi lichSuThi = new LichSuThi(cursor.getString(0), cursor.getDouble(1));
-                listLicSuThi.add(lichSuThi);
+                LichSuThi lichSuThi = new LichSuThi(
+                        cursor.getString(0), cursor.getDouble(1), cursor.getString(2));
+                listLichSuThi.add(lichSuThi);
                 cursor.moveToNext();
             }
-            System.out.println(cursor.getCount());
+
 
         } catch (SQLException e) {
             Toast.makeText(this, "Lỗi kết nối tới CSDL", Toast.LENGTH_SHORT).show();
         }
-        return listLicSuThi;
+
+        if (listLichSuThi.size() == 0) {
+            txtAlertLST.setVisibility(View.VISIBLE);
+        }
+        return listLichSuThi;
     }
 
 
@@ -99,7 +110,10 @@ public class LichSuThiActivity extends AppCompatActivity {
 
 
     public void openMonThiActivity(View view) {
-        Intent i = new Intent(this, MonThiActivity.class);
-        startActivity(i);
+        startActivity(new Intent(this, MonThiActivity.class));
+    }
+
+    public void openLichThiActivity(View view) {
+        startActivity(new Intent(this, LichThiActivity.class));
     }
 }

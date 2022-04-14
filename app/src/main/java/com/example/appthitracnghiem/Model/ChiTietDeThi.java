@@ -1,21 +1,30 @@
 package com.example.appthitracnghiem.Model;
 
 public class ChiTietDeThi {
-    private int IDDeThi,IDCauHoi,IDHocSinh;
+    private int IDDeThi, IDCauHoi, IDHocSinh;
     private String DapAnLuaChon;
 
     private String chiTietDapAn;
     private String chiTietCauHoi;
 
-    public ChiTietDeThi(int IDDeThi, int IDCauHoi,int IDHocSinh, String dapAnLuaChon) {
+    public ChiTietDeThi() {
+    }
+
+    public ChiTietDeThi(int IDDeThi, int IDCauHoi, int IDHocSinh, String dapAnLuaChon, String chiTietCauHoi) {
         this.IDDeThi = IDDeThi;
         this.IDCauHoi = IDCauHoi;
-        this.IDHocSinh=IDHocSinh;
+        this.IDHocSinh = IDHocSinh;
+        DapAnLuaChon = dapAnLuaChon;
+        this.chiTietCauHoi = chiTietCauHoi;
+    }
+
+    public ChiTietDeThi(int IDDeThi, int IDCauHoi, int IDHocSinh, String dapAnLuaChon) {
+        this.IDDeThi = IDDeThi;
+        this.IDCauHoi = IDCauHoi;
+        this.IDHocSinh = IDHocSinh;
         DapAnLuaChon = dapAnLuaChon;
     }
 
-    public ChiTietDeThi() {
-    }
 
     public int getIDDeThi() {
         return IDDeThi;

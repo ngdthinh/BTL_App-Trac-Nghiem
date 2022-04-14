@@ -137,7 +137,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initListChiTietDeThi() {
         for (int i = 0; i < Common.cauHoiList.size(); i++) {
-            ChiTietDeThi chiTietDeThi = new ChiTietDeThi(Common.IDDETHI, Common.cauHoiList.get(i).getIDCauHoi(), Common.ID_HOCSINH, null);
+//            ChiTietDeThi chiTietDeThi = new ChiTietDeThi(Common.IDDETHI, Common.cauHoiList.get(i).getIDCauHoi(), Common.ID_HOCSINH, null);
+            //sua o day 1
+            ChiTietDeThi chiTietDeThi = new ChiTietDeThi(Common.IDDETHI,
+                    Common.cauHoiList.get(i).getIDCauHoi(), Common.ID_HOCSINH, null,
+                    Common.cauHoiList.get(i).getCauHoi());
             Common.chiTietDeThiList.add(chiTietDeThi);
         }
     }

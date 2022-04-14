@@ -119,7 +119,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_weight="0.9"
                 android:contentDescription="@string/app_name"
-                android:onClick="swtichLayout"
+                android:onClick="switchLayout"
                 android:src="@drawable/ic_list_t" />
         </LinearLayout>
 

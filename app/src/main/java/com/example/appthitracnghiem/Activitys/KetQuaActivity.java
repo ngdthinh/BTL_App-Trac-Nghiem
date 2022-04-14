@@ -42,23 +42,22 @@ public class KetQuaActivity extends AppCompatActivity {
     private GrdKetQuaThiAdapter grdKetQuaThiAdapter;
     private LstKetQuaThiAdapter lstKetQuaThiAdapter;
     private List<ChiTietBaiLam> chiTietBaiLam;
-    int currentViewMode = 0;
+    private int currentViewMode = 0;
 
-    double DiemBaiThi;
-    static final int VIEW_MODE_GRIDVIEW = 0;
-    static final int VIEW_MODE_LISTVIEW = 1;
+    private double DiemBaiThi;
+    private static final int VIEW_MODE_GRIDVIEW = 0;
+    private static final int VIEW_MODE_LISTVIEW = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ket_qua);
 
-        System.out.println(Common.cauHoiList.get(0).getCauHoi());
-        System.out.println(Common.cauHoiList.get(0).getDapAn());
+
         stubList = findViewById(R.id.stub_list);
         stubGrid = findViewById(R.id.stub_grid);
 
-        stubList.inflate();
+        stubGrid.inflate();
 
         switchView();
         addControlsInfor();
@@ -105,16 +104,16 @@ public class KetQuaActivity extends AppCompatActivity {
             secondsString = "0" + secondsString;
         }
         txtDeThi.setText("Đề thi: " + Common.TEN_DE_THI);
-        txtThoiGianLamBai.setText("Thời gian làm bài: " + Integer.toString(minutes) + ":" + secondsString);
+        txtThoiGianLamBai.setText("Thời gian làm bài: " + minutes + ":" + secondsString);
         txtSoCauDung.setText("Số câu đúng: " + Common.SO_CAU_DUNG + "/" + chiTietBaiLam.size());
         txtTenHS.setText("Tên học sinh: " + Common.TEN_HOC_SINH);
-        DiemBaiThi = Common.SO_CAU_DUNG * 1.0 / chiTietBaiLam.size() * 10;
-        txtDiem.setText("Điểm: " + String.valueOf(DiemBaiThi));
+        DiemBaiThi = Math.round((Common.SO_CAU_DUNG * 1.0 / chiTietBaiLam.size() * 10) * 100.0) / 100.0;
+        txtDiem.setText("Điểm: " + (DiemBaiThi));
 
     }
 
 
-    public void swtichLayout(View view) {
+    public void switchLayout(View view) {
         if (VIEW_MODE_GRIDVIEW == currentViewMode) {
             currentViewMode = VIEW_MODE_LISTVIEW;
         } else {

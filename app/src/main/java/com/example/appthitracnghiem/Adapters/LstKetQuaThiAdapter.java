@@ -18,7 +18,6 @@ import java.util.List;
 
 public class LstKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
 
-    private static List<ChiTietBaiLam> lstChiTietBaiLam;
 
     public LstKetQuaThiAdapter(@NonNull Context context, int resource, @NonNull List<ChiTietBaiLam> objects) {
         super(context, resource, objects);
@@ -33,9 +32,11 @@ public class LstKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
         //Bind dữ liệu phần tử vào View
         ChiTietBaiLam chiTietBaiLam = getItem(position);
 
+        TextView txtSoThuTu = convertView.findViewById(R.id.txtSoThuTu);
         TextView txtCauHoiLst = convertView.findViewById(R.id.txtCauHoiLst);
         TextView txtCauTraLoiLst = convertView.findViewById(R.id.txtCauTraLoiLst);
 
+        txtSoThuTu.setText(chiTietBaiLam.getSoThuTu() + ": ");
         txtCauHoiLst.setText(chiTietBaiLam.getCauHoi());
         txtCauTraLoiLst.setText(chiTietBaiLam.getDapAnChon());
 
@@ -44,7 +45,7 @@ public class LstKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
     }
 
     public static List<ChiTietBaiLam> getLstChiTietBaiLam() {
-        lstChiTietBaiLam = new ArrayList<>();
+        List<ChiTietBaiLam> lstChiTietBaiLam = new ArrayList<>();
         String chiTietCauHoi, chiTietDapAn;
 
         for (int i = 0; i < Common.chiTietDeThiList.size(); i++) {

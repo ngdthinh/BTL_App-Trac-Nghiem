@@ -3,16 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
-    android:padding="8dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="8dp">
 
-    <TextView
-        android:id="@+id/txtCauHoiLst"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Câu hỏi 1"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtSoThuTu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Câu hỏi 2"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtCauHoiLst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Câu hỏi 1"
+            android:textSize="15sp" />
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/txtCauTraLoiLst"
