@@ -19,6 +19,7 @@ public class LichThiAdapter extends ArrayAdapter<LichThi> {
         super(context, resource, objects);
     }
 
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

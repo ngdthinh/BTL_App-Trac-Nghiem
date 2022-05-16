@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.appthitracnghiem.Model.KetQua;
 import com.example.appthitracnghiem.Model.LichSuThi;
 import com.example.appthitracnghiem.R;
 
@@ -20,6 +19,7 @@ public class LichSuThiAdapters extends ArrayAdapter<LichSuThi> {
     public LichSuThiAdapters(@NonNull Context context, int resource, @NonNull List<LichSuThi> objects) {
         super(context, resource, objects);
     }
+
 
     @NonNull
     @Override
@@ -35,6 +35,7 @@ public class LichSuThiAdapters extends ArrayAdapter<LichSuThi> {
         txtTenMonThiLS.setText("Môn Thi: " + lichSuThi.getTenMonThi());
         txtTenDeThi.setText("Đề Thi: " + lichSuThi.getTenDeThi());
         txtDiem.setText("Điểm: " + lichSuThi.getDiem() + "");
+
 
         return convertView;
     }

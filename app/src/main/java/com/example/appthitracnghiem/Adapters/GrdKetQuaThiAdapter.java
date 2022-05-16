@@ -34,7 +34,7 @@ public class GrdKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
         TextView txtCauHoiGrd = convertView.findViewById(R.id.txtCauHoiGrd);
         ImageView imvKiemTraDapAn = convertView.findViewById(R.id.imvKiemTraDapAn);
 
-        txtCauHoiGrd.setText("Câu "+chiTietBaiLam.getSoThuTu());
+        txtCauHoiGrd.setText("Câu " + chiTietBaiLam.getSoThuTu());
         imvKiemTraDapAn.setImageResource(chiTietBaiLam.getLinkAnh());
 
         return convertView;
@@ -43,9 +43,7 @@ public class GrdKetQuaThiAdapter extends ArrayAdapter<ChiTietBaiLam> {
 
     public static List<ChiTietBaiLam> getLstChiTietBaiLam() {
         List<ChiTietBaiLam> lstChiTietBaiLam = new ArrayList<>();
-        String dapAnNguoiDung = "";
-        String dapAnDung = "";
-        Common.SO_CAU_DUNG = 0;
+        String dapAnNguoiDung, dapAnDung;
         for (int i = 0; i < Common.chiTietDeThiList.size(); i++) {
             dapAnNguoiDung = Common.chiTietDeThiList.get(i).getDapAnLuaChon();
             dapAnDung = Common.cauHoiList.get(i).getDapAn();

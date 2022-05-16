@@ -1,13 +1,7 @@
 package com.example.appthitracnghiem.Activitys;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -19,28 +13,24 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.appthitracnghiem.Adapters.GrdKetQuaThiAdapter;
 import com.example.appthitracnghiem.Adapters.LstKetQuaThiAdapter;
 import com.example.appthitracnghiem.Commons.Common;
 import com.example.appthitracnghiem.ConfigDB.Database;
 import com.example.appthitracnghiem.Model.ChiTietBaiLam;
-import com.example.appthitracnghiem.Model.ChiTietDeThi;
 import com.example.appthitracnghiem.Model.KetQua;
-import com.example.appthitracnghiem.Model.MonThi;
 import com.example.appthitracnghiem.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class KetQuaActivity extends AppCompatActivity {
 
     private ViewStub stubGrid;
     private ViewStub stubList;
-    private ListView listView;
-    private GridView gridView;
 
-    private GrdKetQuaThiAdapter grdKetQuaThiAdapter;
-    private LstKetQuaThiAdapter lstKetQuaThiAdapter;
     private List<ChiTietBaiLam> chiTietBaiLam;
     private int currentViewMode = 0;
 
@@ -58,6 +48,7 @@ public class KetQuaActivity extends AppCompatActivity {
         stubGrid = findViewById(R.id.stub_grid);
 
         stubGrid.inflate();
+        stubList.inflate();
 
         switchView();
         addControlsInfor();
@@ -73,21 +64,12 @@ public class KetQuaActivity extends AppCompatActivity {
         dialog.setMessage("Bạn sẽ không thể xem lại. Bạn chắc chắn muốn rời đi ?");
         dialog.setIcon(R.drawable.warning);
 
-        dialog.setPositiveButton("Có", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-                Intent intent = new Intent(KetQuaActivity.this, LichSuThiActivity.class);
-                startActivity(intent);
-            }
-        });
-        dialog.setNegativeButton("Không", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-            }
-        });
+        dialog.setPositiveButton("Có", (dialogInterface, i) ->
+                startActivity(new Intent(KetQuaActivity.this, LichSuThiActivity.class)));
+        dialog.setNegativeButton("Không", (dialogInterface, i) -> {});
         dialog.show();
     }
+
 
 
     private void addControlsInfor() {
@@ -141,18 +123,18 @@ public class KetQuaActivity extends AppCompatActivity {
     }
 
     private void addControlsLst() {
-        listView = findViewById(R.id.lstKetQuaThi);
+        ListView listView = findViewById(R.id.lstKetQuaThi);
         chiTietBaiLam = LstKetQuaThiAdapter.getLstChiTietBaiLam();
-        lstKetQuaThiAdapter = new LstKetQuaThiAdapter(
+        LstKetQuaThiAdapter lstKetQuaThiAdapter = new LstKetQuaThiAdapter(
                 KetQuaActivity.this, R.layout.item_list_ketquathi_t, chiTietBaiLam);
 
         listView.setAdapter(lstKetQuaThiAdapter);
     }
 
     private void addControlsGrd() {
-        gridView = findViewById(R.id.grdKetQuaThi);
+        GridView gridView = findViewById(R.id.grdKetQuaThi);
         chiTietBaiLam = GrdKetQuaThiAdapter.getLstChiTietBaiLam();
-        grdKetQuaThiAdapter = new GrdKetQuaThiAdapter(
+        GrdKetQuaThiAdapter grdKetQuaThiAdapter = new GrdKetQuaThiAdapter(
                 KetQuaActivity.this, R.layout.item_grid_ketquathi_t, chiTietBaiLam);
 
         gridView.setAdapter(grdKetQuaThiAdapter);
@@ -161,6 +143,7 @@ public class KetQuaActivity extends AppCompatActivity {
     private void insertDBketquathi() {
 
         KetQua ketQua = new KetQua(Common.IDDETHI, Common.ID_HOCSINH, DiemBaiThi);
+
         ContentValues contentValues = new ContentValues();
         contentValues.put("IDDeThi", ketQua.getIDDeThi());
         contentValues.put("IDHocSinh", ketQua.getIDHocSinh());
@@ -168,6 +151,7 @@ public class KetQuaActivity extends AppCompatActivity {
 
         try {
             SQLiteDatabase db = Database.initDatabase(KetQuaActivity.this, Common.DATABASE_NAME);
+
             db.insert("KetQua", null, contentValues);
             db.close();
         } catch (SQLException e) {

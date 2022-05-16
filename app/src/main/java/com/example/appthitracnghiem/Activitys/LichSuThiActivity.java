@@ -1,9 +1,5 @@
 package com.example.appthitracnghiem.Activitys;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -26,8 +22,6 @@ import java.util.List;
 public class LichSuThiActivity extends AppCompatActivity {
 
     private TextView txtAlertLST;
-    private ListView lstView;
-    private LichSuThiAdapters lichSuThiAdapters;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,24 +39,16 @@ public class LichSuThiActivity extends AppCompatActivity {
         dialog.setMessage("Bạn chắc chắn muốn thoát?");
         dialog.setIcon(R.drawable.warning);
 
-        dialog.setPositiveButton("Có", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                finishAffinity();
-            }
-        });
-        dialog.setNegativeButton("Không", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-            }
+        dialog.setPositiveButton("Có", (dialogInterface, i) -> finishAffinity());
+        dialog.setNegativeButton("Không", (dialogInterface, i) -> {
         });
         dialog.show();
     }
 
     private void addConTrolsLst() {
         txtAlertLST = findViewById(R.id.txtAlertLST);
-        lstView = findViewById(R.id.lstLichSuThi);
-        lichSuThiAdapters = new LichSuThiAdapters(
+        ListView lstView = findViewById(R.id.lstLichSuThi);
+        LichSuThiAdapters lichSuThiAdapters = new LichSuThiAdapters(
                 this, R.layout.item_lich_su_thi_t, getLichSuThiList());
 
         lstView.setAdapter(lichSuThiAdapters);
@@ -74,9 +60,6 @@ public class LichSuThiActivity extends AppCompatActivity {
         List<LichSuThi> listLichSuThi = new ArrayList<>();
         try {
             SQLiteDatabase db = Database.initDatabase(this, Common.DATABASE_NAME);
-//            Cursor cursor = db.rawQuery("SELECT distinct d.TenDeThi, k.Diem" +
-//                    " FROM KetQua AS k, DeThi AS d, HocSinh AS h" +
-//                    " WHERE k.IDHocSinh=h.IDHocSinh and k.IDDeThi=d.IDDeThi ", null);
             Cursor cursor = db.rawQuery("SELECT dt.TenDeThi, kq.Diem, mt.TenMon " +
                     "FROM KetQua kq, DeThi dt, HocSinh hs, MonThi mt " +
                     "WHERE kq.IDHocSinh=hs.IDHocSinh AND kq.IDDeThi=dt.IDDeThi " +
@@ -89,8 +72,7 @@ public class LichSuThiActivity extends AppCompatActivity {
                 listLichSuThi.add(lichSuThi);
                 cursor.moveToNext();
             }
-
-
+            cursor.close();
         } catch (SQLException e) {
             Toast.makeText(this, "Lỗi kết nối tới CSDL", Toast.LENGTH_SHORT).show();
         }
@@ -100,6 +82,7 @@ public class LichSuThiActivity extends AppCompatActivity {
         }
         return listLichSuThi;
     }
+
 
 
     @Override

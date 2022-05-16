@@ -36,7 +36,6 @@
         android:background="@drawable/white_back_t"
         android:orientation="vertical"
         android:padding="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/layoutMain"
         app:layout_constraintLeft_toLeftOf="@id/layoutHeader"
         app:layout_constraintRight_toRightOf="@id/layoutHeader"
         app:layout_constraintTop_toBottomOf="@id/layoutHeader">
@@ -48,13 +47,14 @@
             android:text="Đề thi: "
             android:textSize="18sp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tv_TenHocSinh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tên học sinh: "
-            android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtThoiGianLam"
@@ -118,7 +118,6 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_weight="0.9"
-                android:contentDescription="@string/app_name"
                 android:onClick="switchLayout"
                 android:src="@drawable/ic_list_t" />
         </LinearLayout>

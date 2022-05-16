@@ -24,8 +24,6 @@ import java.util.List;
 public class LichThiActivity extends AppCompatActivity {
 
     private TextView txtAlertLT;
-    private ListView lstView;
-    private LichThiAdapter lichThiAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +35,8 @@ public class LichThiActivity extends AppCompatActivity {
 
     private void addConTrolsLst() {
         txtAlertLT = findViewById(R.id.txtAlertLT);
-        lstView = findViewById(R.id.lstLichThi);
-        lichThiAdapter = new LichThiAdapter(
+        ListView lstView = findViewById(R.id.lstLichThi);
+        LichThiAdapter lichThiAdapter = new LichThiAdapter(
                 this, R.layout.item_lich_thi_t, getLichThiList());
         lstView.setAdapter(lichThiAdapter);
     }
@@ -62,11 +60,11 @@ public class LichThiActivity extends AppCompatActivity {
                 lichThiList.add(lichThi);
                 cursor.moveToNext();
             }
-
-
+            cursor.close();
         } catch (SQLException e) {
             Toast.makeText(this, "Lỗi kết nối tới CSDL", Toast.LENGTH_SHORT).show();
         }
+
         if (lichThiList.size() == 0) {
             txtAlertLT.setVisibility(View.VISIBLE);
         }
